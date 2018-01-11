@@ -6,6 +6,8 @@ Status conventions to be returned by arteria services
 when running jobs and querying for their status.
 """
 class State:
+    LINKED = "linked"
+    UPLOADED = "uploaded"
     NONE = "none"
     PENDING = "pending"
     READY = "ready"
@@ -14,7 +16,7 @@ class State:
     ERROR = "error"
     CANCELLED = "cancelled"
 
-valid_states = set([State.NONE, State.PENDING, State.READY, State.STARTED, State.DONE, State.ERROR, State.CANCELLED])
+valid_states = set([State.LINKED, State.UPLOADED, State.NONE, State.PENDING, State.READY, State.STARTED, State.DONE, State.ERROR, State.CANCELLED])
 
 def validate_state(state):
     """
